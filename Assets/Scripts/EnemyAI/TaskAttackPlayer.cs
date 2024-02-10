@@ -6,7 +6,7 @@ using BehaviorTree;
 public class TaskAttackPlayer : Node
 {
     private Transform _lastTarget;
-    // player manager
+    private Health _targetHealth;
 
     public TaskAttackPlayer(Transform transform)
     {
@@ -18,11 +18,17 @@ public class TaskAttackPlayer : Node
         Transform target = (Transform)GetData(EnemyBT.targetKey);
         if (target != _lastTarget)
         {
-            // todo playermanager
+            _targetHealth = target.GetComponent<Health>();
             _lastTarget = target;
         }
 
-        ClearData(EnemyBT.targetKey);
+        // todo animations
+        _targetHealth.TakeHit(100);
+        if (_targetHealth.isDead)
+        {
+            ClearData(EnemyBT.targetKey);
+        }
+
         state = NodeState.RUNNING;
         return state;
 
