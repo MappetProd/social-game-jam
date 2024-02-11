@@ -2,6 +2,7 @@ using PlayerScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -10,9 +11,6 @@ public class Health : MonoBehaviour
 
     [SerializeField]
     private float _maxHealth = 100;
-
-    [SerializeField]
-    private Transform startLevelPosition;
 
     private float _health = 100;
     public bool isDead = false;
@@ -46,9 +44,10 @@ public class Health : MonoBehaviour
 
     public void Respawn()
     {
-        transform.position = startLevelPosition.position;
-        _movement.enableControls();
-        _uiManager.gameOverFrame.SetActive(false);
+        //transform.position = startLevelPosition.position;
+        //_movement.enableControls();
+        //_uiManager.gameOverFrame.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         _health = _maxHealth;
         isDead = false;
