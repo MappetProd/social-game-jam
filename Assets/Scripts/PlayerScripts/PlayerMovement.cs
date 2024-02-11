@@ -6,20 +6,26 @@ namespace PlayerScripts
 {
     public class PlayerMovement : MonoBehaviour
     {
-        private Collider2D _collider;
-        private Rigidbody2D _rb;
-
         [SerializeField] private float _speed;
         private float _dirX;
         private float _dirY;
-
+        private Collider2D _collider;
+        private Rigidbody2D _rb;
+        private Lira _lira;
+        
         private void Start()
         {
-
             _collider = GetComponent<Collider2D>();
             _rb = GetComponent<Rigidbody2D>();
+            _lira = GetComponentInChildren<Lira>();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+                _lira.Play();
+        }
+        
         private void FixedUpdate()
         {
             Move();
