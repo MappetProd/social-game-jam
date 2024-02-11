@@ -34,14 +34,15 @@ namespace PlayerScripts
 
         public void disableControls()
         {
-            _rb.bodyType = RigidbodyType2D.Static;
-            _collider.enabled = false;
+            gameObject.layer = 0;
+            this.enabled = false;
+            _rb.velocity = Vector3.zero;
         }
 
         public void enableControls()
         {
-            _rb.bodyType = RigidbodyType2D.Dynamic;
-            _collider.enabled = true;
+            gameObject.layer = 6;
+            this.enabled = true;
         }
     }
 }

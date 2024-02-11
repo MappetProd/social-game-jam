@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - IInterectable
   - 
   - 
   - 
@@ -49,4 +49,13 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 71173223
+    locked: 0
+  - name: LevelEnvironment
+    uniqueID: 351738851
+    locked: 0
+  - name: Player
+    uniqueID: 1520101219
+    locked: 0
+  - name: UI
+    uniqueID: 292864813
     locked: 0
