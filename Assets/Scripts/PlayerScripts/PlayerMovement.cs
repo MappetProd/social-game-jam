@@ -22,8 +22,10 @@ namespace PlayerScripts
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.R))
                 _lira.Play();
+            else if (Input.GetKeyDown(KeyCode.Q))
+                _lira.ActivatePathFinding();
         }
         
         private void FixedUpdate()

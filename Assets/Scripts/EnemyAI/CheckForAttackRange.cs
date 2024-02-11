@@ -5,7 +5,7 @@ using BehaviorTree;
 public class CheckForAttacakRange : Node
 {
     private Transform _transform;
-    private static int _enemyLayerMask = 1 << 6;
+    private static int _enemyLayerMask = 6;
 
     public CheckForAttacakRange(Transform transform)
     {
