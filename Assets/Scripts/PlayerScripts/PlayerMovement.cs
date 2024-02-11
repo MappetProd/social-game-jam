@@ -7,6 +7,7 @@ namespace PlayerScripts
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float _speed;
+        [SerializeField] private Animator _animator;
         private float _dirX;
         private float _dirY;
         private Collider2D _collider;
@@ -25,7 +26,15 @@ namespace PlayerScripts
             if (Input.GetKeyDown(KeyCode.F))
                 _lira.Play();
         }
-        
+
+        private void LateUpdate()
+        {
+            _animator.SetBool("IsWalkingRight", Input.GetKey(KeyCode.D));
+            _animator.SetBool("IsWalkingLeft", Input.GetKey(KeyCode.A));
+            _animator.SetBool("IsWalkingUp", Input.GetKey(KeyCode.W));
+            _animator.SetBool("IsWalkingDown", Input.GetKey(KeyCode.S));
+        }
+
         private void FixedUpdate()
         {
             Move();
@@ -35,6 +44,8 @@ namespace PlayerScripts
         {
             _dirX = Input.GetAxis("Horizontal");
             _dirY = Input.GetAxis("Vertical");
+            print(_dirX);
+            print(_dirY);
             transform.Translate((Vector3.right * _dirX + Vector3.up * _dirY) * (_speed*Time.deltaTime));
         }
 
