@@ -11,18 +11,18 @@ public class EnemyBT : BehaviorTree.Tree
     public Transform[] waypoints;
 
     public static float patrolSpeed = 2f;
-    public static float followSpeed = 2f;
+    public static float followSpeed = 4.5f;
     public static float chaseSpeed = 5f;
 
     public static float attackCooldownInSeconds;
-    public static float waitTimeTillChaseInSeconds = 5f;
+    public static float waitTimeTillChaseInSeconds = 12f;
 
     public static float attackingRange = 1f;
     public static float followingRange = 30f;
-    public static float chasingRange = 10f;
+    public static float chasingRange = 5f;
 
     public float chasingDistance = 0.01f;
-    public float followingDistance = 20f;
+    public float followingDistance = 6f;
 
     public static string targetKey = "current_target";
 

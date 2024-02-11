@@ -346,8 +346,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u044B \u043D\u0435 \u0441\u043C\u043E\u0433\u043B\u0438 \u0441\u043F\u0430\u0441\u0442\u0438
-    \u042D\u0432\u0440\u0438\u0434\u0438\u043A\u0443."
+  m_Text: You couldn't save Eurydice.
 --- !u!1 &5730386768565743365
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +744,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u043E\u0437\u0440\u043E\u0434\u0438\u0442\u044C\u0441\u044F"
+  m_Text: Try again
 --- !u!1 &5730386768891055734
 GameObject:
   m_ObjectHideFlags: 0

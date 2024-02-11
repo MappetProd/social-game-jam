@@ -14,8 +14,17 @@ namespace PlayerScripts
         [SerializeField] private Transform _liraLightDestination;
 
         private GameObject _currPathfindingLight;
+
+        private AudioManager _audioManager;
+
+        private void Awake()
+        {
+            _audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        }
+
         public void ActivatePathFinding()
         {
+            _audioManager.PlaySFX(_audioManager.liraPath);
             _currPathfindingLight = Instantiate(_lightPrefab);
             _currPathfindingLight.transform.position = transform.position;
 
@@ -45,6 +54,7 @@ namespace PlayerScripts
 
         private IEnumerator EnemyLight()
         {
+            _audioManager.PlaySFX(_audioManager.liraReveal);
             _enemyLight.intensity = 1f;
             yield return new WaitForSeconds(3f);
             _enemyLight.intensity = 0f;
