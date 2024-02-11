@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6724041521191708443}
   - component: {fileID: 6724041521191708444}
   - component: {fileID: 6724041521191708445}
-  - component: {fileID: 2890949957473238720}
-  m_Layer: 0
+  - component: {fileID: 8427862165233159931}
+  m_Layer: 7
   m_Name: SafePlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -740652409
-  m_SortingLayer: 0
+  m_SortingLayerID: 351738851
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ef3fe19ae0a696e44bc99ed9f3e6eae8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,10 +96,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.86111736, y: -3.040821}
+  m_Offset: {x: -0.116072655, y: 0.18770707}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,9 +110,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.618326, y: 4.4144974}
+  m_Size: {x: 1.8037167, y: 4.7456303}
   m_EdgeRadius: 0
---- !u!114 &2890949957473238720
+--- !u!114 &8427862165233159931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

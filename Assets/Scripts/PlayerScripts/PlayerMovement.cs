@@ -36,12 +36,14 @@ namespace PlayerScripts
         {
             _rb.bodyType = RigidbodyType2D.Static;
             _collider.enabled = false;
+            this.enabled = false;
         }
 
         public void enableControls()
         {
             _rb.bodyType = RigidbodyType2D.Dynamic;
             _collider.enabled = true;
+            this.enabled = true;
         }
     }
 }

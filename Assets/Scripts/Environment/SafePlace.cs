@@ -3,43 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafePlace : MonoBehaviour
+namespace Interactions
 {
-    private Collider2D _collider;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class SafePlace : MonoBehaviour, IInteractable
     {
-        GameObject gameObject = collision.gameObject;
-        if (gameObject.CompareTag("Player"))
+        public void Interact(GameObject playerObject)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                PlayerStates state = gameObject.GetComponent<PlayerStates>();
-                PlayerMovement movementController = gameObject.GetComponent<PlayerMovement>();
-                SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+            PlayerStates states = playerObject.GetComponent<PlayerStates>();
+            PlayerMovement playerMovement = playerObject.GetComponent<PlayerMovement>();
+            SpriteRenderer spriteRenderer = playerObject.GetComponent<SpriteRenderer>();
 
-                if (state.isHiding)
-                {
-                    sr.enabled = false;
-                    movementController.disableControls();
-                }
-                else
-                {
-                    sr.enabled = false;
-                    movementController.disableControls();
-                }
+            states.isHiding = !states.isHiding;
+            
+            if (states.isHiding)
+            {
+                playerMovement.enableControls();
+                spriteRenderer.enabled = true;
+            }
+            else
+            {
+                playerMovement.disableControls();
+                spriteRenderer.enabled = false;
             }
         }
-    }
-
-    void Start()
-    {
-           
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
