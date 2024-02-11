@@ -17,7 +17,7 @@ public class InteractionSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Collider2D interactCollider = Physics2D.OverlapCircle(transform.position, 3f, interactionLayer);
+            Collider2D interactCollider = Physics2D.OverlapCircle(transform.position, 1.5f, interactionLayer);
             if (interactCollider != null)
             {
                 if (interactCollider.gameObject.TryGetComponent(out IInteractable interactObj))

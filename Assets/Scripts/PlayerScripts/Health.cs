@@ -16,7 +16,12 @@ public class Health : MonoBehaviour
     public bool isDead = false;
 
     private PlayerMovement _movement;
-    
+    private AudioManager _audioManager;
+
+    private void Awake()
+    {
+        _audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
 
     private void Start()
     {
@@ -29,7 +34,7 @@ public class Health : MonoBehaviour
         if (_health <= 0)
         {
             Death();
-            // todo gameover gui
+            
         }
     }
 
@@ -38,7 +43,7 @@ public class Health : MonoBehaviour
         _movement.disableControls();
         _uiManager.gameOverFrame.SetActive(true);
         // todo animation of death
-
+        _audioManager.PlaySFX(_audioManager.death);
         isDead = true;
     }
 

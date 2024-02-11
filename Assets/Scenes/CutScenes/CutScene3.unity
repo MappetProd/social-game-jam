@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 220125004}
-  transitionTime: 4
+  transitionTime: 10
   isCutscene: 1
 --- !u!1 &98071537
 GameObject:
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbad0d7928fa99c4e8cef6e3c9452a01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a7cbdc870e6b3d46b8a5b551dd47b57, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

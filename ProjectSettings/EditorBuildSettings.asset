@@ -13,11 +13,11 @@ EditorBuildSettings:
     guid: 9d0331b128dcf564c87e9ee0dce7553d
   - enabled: 1
     path: Assets/Scenes/CutScenes/CutScene3.unity
+    guid: 6199b27bc84482d4baae08e45759eaf1
+  - enabled: 1
+    path: Assets/Scenes/ProdLevel3.unity
+    guid: 799b743943d28864e9ece151c7d20b08
+  - enabled: 1
+    path: Assets/Scenes/CutScenes/EngingCutScene.unity
     guid: 96e0efbe78e6f254e95e1ad46593fd02
-  - enabled: 1
-    path: Assets/Scenes/NextLevelDoorsTest.unity
-    guid: 8266b0444fc275a48a13116be985fe5e
-  - enabled: 1
-    path: Assets/Scenes/DialogSystemTest.unity
-    guid: ff6f86789d59ccb4cab4c2e31fb9308f
   m_configObjects: {}

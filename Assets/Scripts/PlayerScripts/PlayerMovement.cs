@@ -23,8 +23,10 @@ namespace PlayerScripts
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.R))
                 _lira.Play();
+            else if (Input.GetKeyDown(KeyCode.Q))
+                _lira.ActivatePathFinding();
         }
 
         private void LateUpdate()
@@ -51,7 +53,7 @@ namespace PlayerScripts
 
         public void disableControls()
         {
-            gameObject.layer = 0;
+            gameObject.layer = 8;
             this.enabled = false;
             _rb.velocity = Vector3.zero;
         }

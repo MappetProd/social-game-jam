@@ -11,9 +11,16 @@ namespace Interactions
 
         [SerializeField] 
         private UIManager _uiManager;
+        private AudioManager _audioManager;
 
-        private const string HIDE_INTERACTION_STRING = "Нажмите 'E', чтобы спрятаться";
-        private const string CONTINUE_INTERACTION_STRING = "Нажмите 'E', чтобы выйти из склепа";
+        private const string HIDE_INTERACTION_STRING = "Press 'E' to hide";
+        private const string CONTINUE_INTERACTION_STRING = "Press 'E' to get out of a shelter";
+
+        private void Awake()
+        {
+            _audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        }
+
         public void Interact(GameObject playerObject)
         {
             PlayerStates states = playerObject.GetComponent<PlayerStates>();
@@ -21,7 +28,7 @@ namespace Interactions
             SpriteRenderer spriteRenderer = playerObject.GetComponent<SpriteRenderer>();
 
             states.isHiding = !states.isHiding;
-            
+            _audioManager.PlaySFX(_audioManager.hide);
             if (states.isHiding)
             {
                 playerMovement.disableControls();

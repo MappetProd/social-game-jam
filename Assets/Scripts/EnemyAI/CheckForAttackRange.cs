@@ -18,6 +18,7 @@ public class CheckForAttacakRange : Node
         if (colliders.Length > 0)
         {
             parent.parent.SetData(EnemyBT.targetKey, colliders[0].transform);
+            parent.parent.SetData(EnemyBT.targetKey, colliders[0].transform);
             state = NodeState.SUCCESS;
         }
         else
