@@ -42,7 +42,7 @@ namespace PlayerScripts
 
         public void disableControls()
         {
-            gameObject.layer = 0;
+            gameObject.layer = 8;
             this.enabled = false;
             _rb.velocity = Vector3.zero;
         }
