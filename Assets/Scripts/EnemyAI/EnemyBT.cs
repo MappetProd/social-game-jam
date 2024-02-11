@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviorTree;
-using NavMeshPlus;
 using System;
-using UnityEngine.AI;
 
 public class EnemyBT : BehaviorTree.Tree
 {
@@ -26,8 +24,10 @@ public class EnemyBT : BehaviorTree.Tree
 
     public static string targetKey = "current_target";
 
+
     protected override Node SetupTree()
     {
+        Console.WriteLine("lmao");
         Node root = new Selector(new List<Node>
         {
             new Sequence(new List<Node>
