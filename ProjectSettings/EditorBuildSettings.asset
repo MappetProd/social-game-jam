@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScenes/CutScene3.unity
     guid: 96e0efbe78e6f254e95e1ad46593fd02
-  - enabled: 1
-    path: Assets/Scenes/RespawnTestAgain.unity
-    guid: 07c1ce20322084646bcac20793f2ccfb
   m_configObjects: {}
