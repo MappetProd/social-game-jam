@@ -35,7 +35,11 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        yield return new WaitForSeconds(transitionTime);
+        //animator.SetTrigger("End");
+        if (isCutscene)
+        {
+            yield return new WaitForSeconds(transitionTime);
+        }
         animator.SetTrigger("Start");
         yield return new WaitForSeconds(1f);
 
