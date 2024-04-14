@@ -46,8 +46,6 @@ namespace PlayerScripts
         {
             _dirX = Input.GetAxis("Horizontal");
             _dirY = Input.GetAxis("Vertical");
-            print(_dirX);
-            print(_dirY);
             transform.Translate((Vector3.right * _dirX + Vector3.up * _dirY) * (_speed*Time.deltaTime));
         }
 

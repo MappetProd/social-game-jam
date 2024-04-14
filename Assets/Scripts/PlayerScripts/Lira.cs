@@ -13,9 +13,10 @@ namespace PlayerScripts
         [SerializeField] private float _liraLightSpeed;
         [SerializeField] private Transform _liraLightDestination;
 
-        private GameObject _currPathfindingLight;
-
+        private GameObject _currentPathfindingLight;
         private AudioManager _audioManager;
+        private bool _isPathFindingAvailable = true;
+        private bool _isEnemyLightAvailable = true;
 
         private void Awake()
         {
@@ -24,11 +25,13 @@ namespace PlayerScripts
 
         public void ActivatePathFinding()
         {
+            if (!_isPathFindingAvailable) return;
+            StartCoroutine(PathFindingCooldown());
             _audioManager.PlaySFX(_audioManager.liraPath);
-            _currPathfindingLight = Instantiate(_lightPrefab);
-            _currPathfindingLight.transform.position = transform.position;
+            _currentPathfindingLight = Instantiate(_lightPrefab);
+            _currentPathfindingLight.transform.position = transform.position;
 
-            NavMeshAgent agent = _currPathfindingLight.AddComponent<NavMeshAgent>();
+            NavMeshAgent agent = _currentPathfindingLight.AddComponent<NavMeshAgent>();
             agent.updateRotation = false;
             agent.updateUpAxis = false;
             agent.speed = _liraLightSpeed;
@@ -37,12 +40,12 @@ namespace PlayerScripts
 
         private void Update()
         {
-            if (_currPathfindingLight != null)
+            if (_currentPathfindingLight != null)
             {
-                if (Vector2.Distance(_currPathfindingLight.transform.position, _liraLightDestination.position) < 1f)
+                if (Vector2.Distance(_currentPathfindingLight.transform.position, _liraLightDestination.position) < 1f)
                 {
-                    Destroy(_currPathfindingLight);
-                    _currPathfindingLight = null;
+                    Destroy(_currentPathfindingLight);
+                    _currentPathfindingLight = null;
                 }
             }
         }
@@ -54,10 +57,20 @@ namespace PlayerScripts
 
         private IEnumerator EnemyLight()
         {
+            _isEnemyLightAvailable = false;
             _audioManager.PlaySFX(_audioManager.liraReveal);
             _enemyLight.intensity = 1f;
             yield return new WaitForSeconds(3f);
             _enemyLight.intensity = 0f;
+            _isEnemyLightAvailable = true;
+        }
+
+        private IEnumerator PathFindingCooldown()
+        {
+            _isPathFindingAvailable = false;
+            print(_isPathFindingAvailable);
+            yield return new WaitForSeconds(2f);
+            _isPathFindingAvailable = true;
         }
     }
 }
